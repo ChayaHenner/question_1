@@ -28,7 +28,7 @@ public class BuildingData {
             else System.out.println("the perimeter of your building is" + current_building.get_perimeter());
 
         }
-        else if (current_building_no==2) {
+        else if (current_building_no==2) {//triangle
             current_building = new TriangleBuilding(height, length);
             buildings.add(current_building);
             System.out.println("Enter 1 if you want to see your building's perimeter \n" +
@@ -36,19 +36,28 @@ public class BuildingData {
         }
         else if (current_building_no==3)
             flag_done=true;
+        else {
+            System.out.println("error");
+            flag_done=true;
+          }
+        }
 
-    }
+
 
     public void triangle_options(int option_tri)
     {
         if (option_tri == 1)
             System.out.println("the perimeter of your building is" + current_building.get_perimeter());
-        else if (option_tri == 2)
-            if(current_building.get_length()%2 == 0 || current_building.get_length() > 2*current_building.get_height())
+        else if (option_tri == 2) {
+            if (current_building.get_length() % 2 == 0 || current_building.get_length() > 2 * current_building.get_height())
                 System.out.println("error:cannot print your  triangle building");
             else
                 System.out.println("your building printed \n" + ((TriangleBuilding) current_building).get_printed());
-
+        }
+        else {
+            System.out.println("error");
+            flag_done=true;
+        }
     }
 }
 
