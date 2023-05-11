@@ -1,16 +1,15 @@
 public class RectangleBuilding extends Building{
     public RectangleBuilding(int height,int length)
     {
-        _height=height;
-        _length=length;
+        super(height,length);
     }
 
     @Override
     public int get_perimeter() {
-        return _height*2+_length*2;//!!
+        return get_height()*2+get_length()*2;
     }
 
     public int get_area() {
-        return _height*_length;//!!
+        return get_height()*get_length();
     }
 }
